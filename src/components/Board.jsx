@@ -1,7 +1,6 @@
-
 import Square from './Square'
 
-const Board=({   squares,  handlesquareclick})=>{
+const Board=({squares,  handlesquareclick})=>{
 
       const renderSquare=position=>{
         return(
