@@ -1,7 +1,10 @@
 
-const Square = ({value}) => {
+const Square = ({value,onClick}) => {
     // console.log(props.value)
-    return (<div>{value}</div>);
+    return (<button type="button" className="square" onClick={onClick}>
+       {value}
+    </button>
+    );
 
     
 };
