@@ -5,14 +5,14 @@ const StatusMessage = ({winner , isXNext , squares})=>{
 
 const renderStatusMessage = ()=>{
     if(winner){
-        return <div>winner is {winner}</div>
+        return <div>winner is <span className={winner== 'X'? 'text-green' : 'text-orange'}> {winner}</span></div>
     }
      if(!winner && noMovesLeft){
-         return <div>Match Tie!!</div>;
+         return <div><span className="text-orange">Match Tie!!</span></div>;
         }   
 
         if(!winner && !noMovesLeft){
-            return <div>next player is {nextPlayer}</div>;
+            return <div>next player is <span className={isXNext? 'text-green' : 'text-orange'}> {nextPlayer}</span></div>;
         }
         return null;
         
