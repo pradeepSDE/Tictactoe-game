@@ -3,8 +3,11 @@ import { useState } from 'react';
 import Board from './components/Board';
 import {calculateWinner} from './winner.js';
 import StatusMessage from './components/StatusMessage';
-
+import RefreshButton from './components/resatrtGame';
+let  count = 0;
 function App() {
+
+  count = count + 1;
   
   const [squares,setSquares]=useState((Array(9).fill(null)))
 
@@ -30,6 +33,7 @@ function App() {
           )
       });
       setIsXNext(currentIsXNext=>!currentIsXNext);     
+      console.log(count)
   }
 
 
@@ -37,7 +41,8 @@ function App() {
     <div className="app">
       <StatusMessage winner={winner} isXNext={isXNext} squares={squares}/>
       <Board squares={squares} handlesquareclick={handlesquareclick} />
-     
+     <RefreshButton winner={winner} count={count} />
+      
     </div>
    
   );
