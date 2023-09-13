@@ -13,9 +13,9 @@ function App() {
 
   const [isXNext,setIsXNext]=useState(false);
 
-  const winner = calculateWinner(squares)
+  const {winner,winningSquares} = calculateWinner(squares)
 
-
+     
   
   const handlesquareclick = clickedposition =>{
 
@@ -34,18 +34,21 @@ function App() {
       });
       setIsXNext(currentIsXNext=>!currentIsXNext);     
       console.log(count)
+
   }
 
-
+  
   return (
     <div className="app">
+        {console.log(winningSquares)}
       <StatusMessage winner={winner} isXNext={isXNext} squares={squares}/>
-      <Board squares={squares} handlesquareclick={handlesquareclick} />
+      <Board squares={squares} handlesquareclick={handlesquareclick}  winningSquares={winningSquares}/>
      <RefreshButton winner={winner} count={count} />
       
     </div>
    
   );
+  
 }
 
 export default App;
