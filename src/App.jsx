@@ -4,8 +4,13 @@ import Board from './components/Board';
 import {calculateWinner} from './winner.js';
 import StatusMessage from './components/StatusMessage';
 import RefreshButton from './components/resatrtGame';
+
+import WinnerParty from './components/winnerparty';
+
 let  count = 0;
 function App() {
+
+    //  winnerparty();
 
   count = count + 1;
   
@@ -15,7 +20,7 @@ function App() {
 
   const {winner,winningSquares} = calculateWinner(squares)
 
-     
+     console.log(winner)
   
   const handlesquareclick = clickedposition =>{
 
@@ -34,16 +39,24 @@ function App() {
       });
       setIsXNext(currentIsXNext=>!currentIsXNext);     
       console.log(count)
+      console.log(winner)
+
+     
 
   }
 
   
   return (
     <div className="app">
-        {console.log(winningSquares)}
+
+        <div className="bg-balls"></div>
+        
+       <h1>TIC <span className='text-orange'>TAC</span> TOE</h1>
       <StatusMessage winner={winner} isXNext={isXNext} squares={squares}/>
       <Board squares={squares} handlesquareclick={handlesquareclick}  winningSquares={winningSquares}/>
      <RefreshButton winner={winner} count={count} />
+    <WinnerParty winner={winner}/>
+
       
     </div>
    

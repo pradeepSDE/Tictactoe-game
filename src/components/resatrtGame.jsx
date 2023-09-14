@@ -9,7 +9,7 @@ function RefreshButton( {winner,count}) {
   return (
     <button onClick={handleRefresh}
     className={`btn-reset ${winner || count==20 ? `active` : `` }`}> 
-      Restart game 
+       <b>Restart game</b>
     </button>
   );
 }

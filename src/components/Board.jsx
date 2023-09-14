@@ -5,7 +5,7 @@ const Board=({squares,  handlesquareclick, winningSquares,} )=>{
     
     
     const renderSquare=position=>{
-            console.log(winningSquares)
+            // console.log(winningSquares)
           const isWinningSquares = winningSquares.includes(position);
         return(
             <Square value={squares[position]} 
