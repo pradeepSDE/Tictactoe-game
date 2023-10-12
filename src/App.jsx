@@ -6,6 +6,7 @@ import StatusMessage from './components/StatusMessage';
 import RefreshButton from './components/resatrtGame';
 
 import WinnerParty from './components/winnerparty';
+import Footer from './components/Footer';
 
 let  count = 0;
 function App() {
@@ -56,7 +57,7 @@ function App() {
       <Board squares={squares} handlesquareclick={handlesquareclick}  winningSquares={winningSquares}/>
      <RefreshButton winner={winner} count={count} />
     <WinnerParty winner={winner}/>
-
+     <Footer/>
       
     </div>
    
